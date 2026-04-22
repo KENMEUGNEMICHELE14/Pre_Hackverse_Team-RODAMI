@@ -16,10 +16,10 @@ export default function DashboardPage() {
   const topTask = sortedTasks.find(t => t.status !== 'DONE');
 
   const summaryCards = [
-    { label: "Temps de Focus", value: `${stats.totalFocusTime}m`, icon: Timer, color: "text-primary", bg: "bg-primary/5" },
-    { label: "Tâches Complétées", value: stats.tasksCompleted, icon: CheckCircle, color: "text-secondary", bg: "bg-secondary/5" },
-    { label: "Série Actuelle", value: `${stats.streak} j`, icon: TrendingUp, color: "text-orange-500", bg: "bg-orange-50" },
-    { label: "Niveau Actuel", value: stats.level, icon: Trophy, color: "text-tertiary", bg: "bg-tertiary/5" },
+    { label: "Temps de Focus", value: `${stats.totalFocusTime}m`, icon: Timer, color: "text-primary", bg: "bg-primary/10" },
+    { label: "Tâches Complétées", value: stats.tasksCompleted, icon: CheckCircle, color: "text-secondary", bg: "bg-secondary/10" },
+    { label: "Série Actuelle", value: `${stats.streak} j`, icon: TrendingUp, color: "text-orange-500", bg: "bg-orange-500/10" },
+    { label: "Niveau Actuel", value: stats.level, icon: Trophy, color: "text-tertiary", bg: "bg-tertiary/10" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function DashboardPage() {
           {summaryCards.map((card, idx) => {
             const Icon = card.icon;
             return (
-              <Card key={idx} className="p-6 border-b-4 border-b-transparent hover:border-b-primary transition-all">
+              <Card key={idx} className="p-6 border-b-4 border-b-transparent hover:border-b-primary transition-all bg-bg-alt/20">
                 <div className="flex items-center gap-4">
                   <div className={cn("p-3 rounded-none", card.bg, card.color)}>
                     <Icon size={24} />
@@ -77,9 +77,9 @@ export default function DashboardPage() {
             </div>
 
             {topTask ? (
-              <Card className="p-10 border-2 border-primary/20 bg-white relative overflow-hidden group">
+              <Card className="p-10 border-2 border-primary/20 bg-bg-alt/40 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4">
-                  <Badge variant="blue" className="animate-pulse">À faire maintenant</Badge>
+                  <Badge variant="blue" className="animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.3)]">À faire maintenant</Badge>
                 </div>
                 <div className="max-w-xl">
                   <h4 className="text-3xl font-black text-text-main mb-4 leading-tight uppercase tracking-tighter">
@@ -96,14 +96,14 @@ export default function DashboardPage() {
                     </span>
                   </div>
                   <Link href="/dashboard/tasks">
-                    <Button variant="secondary" className="px-8 border-primary text-primary hover:bg-primary/5">
+                    <Button variant="secondary" className="px-8 border-primary text-primary hover:bg-primary/10">
                       Gérer la tâche
                     </Button>
                   </Link>
                 </div>
               </Card>
             ) : (
-              <Card className="p-20 text-center border-dashed">
+              <Card className="p-20 text-center border-dashed border-white/10 bg-bg-alt/20">
                 <p className="text-text-secondary italic">Aucune tâche en attente. Profitez-en ou créez-en une !</p>
               </Card>
             )}
@@ -114,17 +114,17 @@ export default function DashboardPage() {
             <h3 className="text-sm font-black uppercase tracking-widest text-text-main">
               Évolution
             </h3>
-            <Card className="p-8 bg-bg-alt border-none shadow-none">
+            <Card className="p-8 bg-bg-alt/40 border-white/5">
               <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-primary text-white flex items-center justify-center text-4xl font-black mb-4 rounded-none shadow-xl border-4 border-white">
+                <div className="w-24 h-24 bg-primary text-white flex items-center justify-center text-4xl font-black mb-4 rounded-none shadow-xl border-4 border-bg-main shadow-primary/20">
                   {stats.level}
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-1">Niveau Actuel</div>
-                <div className="text-sm font-bold text-text-main mb-6">Master Focus</div>
+                <div className="text-sm font-bold text-text-main mb-6 uppercase tracking-tighter">Master Focus</div>
                 
-                <div className="w-full bg-gray-200 h-2 rounded-none mb-2 overflow-hidden">
+                <div className="w-full bg-white/5 h-2 rounded-none mb-2 overflow-hidden border border-white/10">
                   <div 
-                    className="h-full bg-primary transition-all duration-1000" 
+                    className="h-full bg-primary transition-all duration-1000 shadow-[0_0_10px_rgba(59,130,246,0.5)]" 
                     style={{ width: `${(stats.xp / (stats.level * 1000)) * 100}%` }}
                   />
                 </div>
@@ -134,9 +134,9 @@ export default function DashboardPage() {
               </div>
             </Card>
 
-            <Card className="p-6 bg-secondary/5 border-secondary/20">
+            <Card className="p-6 bg-secondary/10 border-secondary/20">
               <div className="flex items-center gap-4">
-                <div className="bg-secondary text-white p-2">
+                <div className="bg-secondary text-white p-2 shadow-lg shadow-secondary/20">
                   <Trophy size={20} />
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-secondary">

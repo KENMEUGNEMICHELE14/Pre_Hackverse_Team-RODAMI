@@ -40,12 +40,12 @@ export const CTASection = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
             <Link href="/auth/register">
-              <Button size="lg" className="h-16 px-10 text-sm bg-primary hover:bg-primary-hover shadow-xl transition-all rounded-none font-black italic uppercase tracking-wider">
+              <Button size="lg" className="h-16 px-10 text-sm bg-primary hover:bg-primary-hover shadow-xl transition-all font-black italic uppercase tracking-wider">
                 Créer mon compte
               </Button>
             </Link>
             <Link href="/dashboard/stats">
-              <Button size="lg" variant="secondary" className="h-16 px-10 text-sm glass text-white hover:bg-white/5 transition-all rounded-none font-black italic uppercase tracking-wider">
+              <Button size="lg" variant="secondary" className="h-16 px-10 text-sm glass text-white hover:bg-white/5 transition-all font-black italic uppercase tracking-wider">
                 Classement
               </Button>
             </Link>

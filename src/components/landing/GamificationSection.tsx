@@ -35,10 +35,10 @@ export const GamificationSection = () => {
           <div className="glass p-6 md:p-10 relative z-10 glow-border shadow-2xl border-t-4 border-primary">
             <div className="flex flex-col sm:flex-row items-center gap-8 mb-10">
               <div className="relative shrink-0">
-                <div className="w-20 h-20 bg-white flex items-center justify-center font-black text-3xl italic text-primary shadow-xl">
+                <div className="w-20 h-20 bg-white flex items-center justify-center font-black text-3xl italic text-primary shadow-xl rounded-2xl">
                   JD
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[9px] font-black px-2 py-1">LVL 12</div>
+                <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[9px] font-black px-2 py-1 rounded-md">LVL 12</div>
               </div>
               
               <div className="text-center sm:text-left flex-1">
@@ -70,7 +70,7 @@ export const GamificationSection = () => {
                   <span>Progression de Carrière</span>
                   <span className="text-primary">62%</span>
                 </div>
-                <div className="w-full bg-white/5 h-2 overflow-hidden relative border border-white/5">
+                <div className="w-full bg-white/5 h-2 overflow-hidden relative border border-white/5 rounded-full">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: "62.5%" }}

@@ -58,7 +58,7 @@ export const Navbar = () => {
               <Button variant="tertiary" className="text-[10px] font-black uppercase tracking-widest text-white hover:text-white/70">Se connecter</Button>
             </Link>
             <Link href="/auth/register">
-              <Button size="sm" className="text-[10px] font-black uppercase tracking-widest px-6 h-10 rounded-none bg-white text-primary hover:bg-white/90">S'inscrire</Button>
+              <Button size="sm" className="text-[10px] font-black uppercase tracking-widest px-6 h-10 bg-white text-primary hover:bg-white/90">S'inscrire</Button>
             </Link>
           </div>
         </div>

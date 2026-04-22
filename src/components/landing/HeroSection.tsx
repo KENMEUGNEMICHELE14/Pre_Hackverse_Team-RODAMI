@@ -49,7 +49,7 @@ export const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-8">
               <Link href="/auth/register">
-                <Button size="lg" className="h-20 px-12 text-lg shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all rounded-none uppercase font-black italic tracking-tight">
+                <Button size="lg" className="h-20 px-12 text-lg shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all uppercase font-black italic tracking-tight">
                   Lancer mon Focus
                 </Button>
               </Link>

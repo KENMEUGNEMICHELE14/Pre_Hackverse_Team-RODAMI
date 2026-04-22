@@ -7,9 +7,9 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Badge = ({ className, variant = "amber", children, ...props }: BadgeProps) => {
   const variants = {
-    amber: "bg-[#FEF3C7] text-[#B45309] border-[#FDE68A]",
-    emerald: "bg-[#D1FAE5] text-[#047857] border-[#A7F3D0]",
-    blue: "bg-[#DBEAFE] text-[#1E40AF] border-[#BFDBFE]",
+    amber: "bg-tertiary/10 text-tertiary border-tertiary/30 shadow-[0_0_10px_rgba(245,158,11,0.1)]",
+    emerald: "bg-secondary/10 text-secondary border-secondary/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]",
+    blue: "bg-primary/10 text-primary border-primary/30 shadow-[0_0_10px_rgba(59,130,246,0.1)]",
   };
 
   return (

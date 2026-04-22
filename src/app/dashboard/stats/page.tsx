@@ -33,7 +33,7 @@ export default function StatsPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Chart Card */}
-          <Card className="lg:col-span-2 p-8 border-none shadow-none bg-white">
+          <Card className="lg:col-span-2 p-8 border-white/5 bg-bg-alt/40 backdrop-blur-md shadow-none">
             <div className="flex items-center justify-between mb-10">
               <div>
                 <h3 className="text-sm font-black uppercase tracking-widest text-text-main">Temps de Focus Hebdomadaire</h3>
@@ -49,10 +49,10 @@ export default function StatsPage() {
               {weekData.map((d, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-4 group">
                   <div 
-                    className="w-full bg-primary/10 group-hover:bg-primary transition-all rounded-none relative"
+                    className="w-full bg-primary/20 group-hover:bg-primary transition-all rounded-none relative shadow-inner"
                     style={{ height: `${(d.value / maxVal) * 100}%` }}
                   >
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-black bg-text-main text-white px-2 py-1 rounded-none">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-black bg-primary text-white px-2 py-1 rounded-none shadow-lg">
                       {d.value}m
                     </div>
                   </div>
@@ -64,18 +64,18 @@ export default function StatsPage() {
 
           {/* Quick Metrics */}
           <div className="space-y-6">
-            <Card className="p-6 bg-primary text-white border-none">
+            <Card className="p-6 bg-primary text-white border-none shadow-lg shadow-primary/20">
               <div className="flex flex-col gap-4">
-                <Zap size={32} className="opacity-50" />
+                <Zap size={32} className="opacity-40" />
                 <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white/60 mb-1">Efficacité Moyenne</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-white/70 mb-1">Efficacité Moyenne</div>
                   <div className="text-3xl font-black">94%</div>
                 </div>
               </div>
             </Card>
-            <Card className="p-6 bg-white border-gray-200">
+            <Card className="p-6 bg-bg-alt/60 border-white/5 shadow-none backdrop-blur-sm">
               <div className="flex flex-col gap-4">
-                <Clock size={32} className="text-secondary" />
+                <Clock size={32} className="text-secondary opacity-80" />
                 <div>
                   <div className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-1">Durée Moyenne Session</div>
                   <div className="text-3xl font-black text-text-main">28.5m</div>
@@ -88,9 +88,9 @@ export default function StatsPage() {
         {/* History List */}
         <div className="space-y-6">
           <h3 className="text-sm font-black uppercase tracking-widest text-text-main">Sessions Récentes</h3>
-          <Card className="overflow-hidden border-none shadow-none bg-white">
+          <Card className="overflow-hidden border-white/5 p-0 bg-bg-alt/40 backdrop-blur-md">
             <table className="w-full text-left">
-              <thead className="bg-bg-alt border-b border-gray-200">
+              <thead className="bg-white/5 border-b border-white/10">
                 <tr>
                   <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-text-secondary">Date</th>
                   <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-text-secondary">Type</th>
@@ -98,7 +98,7 @@ export default function StatsPage() {
                   <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-text-secondary">Récompense</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 font-medium text-sm">
+              <tbody className="divide-y divide-white/5 font-medium text-sm text-text-main">
                 {sessions.length === 0 ? (
                   <tr>
                     <td colSpan={4} className="px-6 py-10 text-center text-text-secondary italic">Aucune donnée historique disponible.</td>

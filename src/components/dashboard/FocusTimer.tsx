@@ -63,7 +63,7 @@ export const FocusTimer = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Card className="p-12 text-center relative overflow-hidden border-4 border-primary/10">
+      <Card className="p-12 text-center relative overflow-hidden border-4 border-primary/20 bg-bg-alt/40 shadow-[0_0_50px_rgba(59,130,246,0.1)]">
         {/* Progress Background */}
         <div 
           className="absolute bottom-0 left-0 h-1 bg-primary/20 transition-all duration-1000" 
@@ -75,10 +75,10 @@ export const FocusTimer = () => {
             <button
               key={m}
               onClick={() => resetTimer(m)}
-              className={`px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all border ${
+              className={`px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all border rounded-xl ${
                 mode === m 
-                  ? "bg-primary text-white border-primary shadow-lg" 
-                  : "bg-white text-text-secondary border-gray-200 hover:border-primary/50"
+                  ? "bg-primary text-white border-primary shadow-lg shadow-primary/20" 
+                  : "bg-bg-main text-text-secondary border-white/10 hover:border-primary/50"
               }`}
             >
               {MODES[m].label}
@@ -107,7 +107,7 @@ export const FocusTimer = () => {
           
           <button 
             onClick={() => resetTimer()}
-            className="w-16 h-16 flex items-center justify-center border-2 border-gray-200 text-text-secondary hover:text-danger hover:border-danger transition-all"
+            className="w-16 h-16 flex items-center justify-center border-2 border-white/10 text-text-secondary hover:text-danger hover:border-danger transition-all bg-bg-main rounded-xl"
           >
             <RotateCcw size={24} />
           </button>
@@ -115,8 +115,8 @@ export const FocusTimer = () => {
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-        <div className="bg-white p-8 border border-gray-200 flex items-center gap-6">
-          <div className="bg-primary/5 p-4 text-primary">
+        <div className="bg-bg-alt/60 p-8 border border-white/5 flex items-center gap-6 backdrop-blur-sm">
+          <div className="bg-primary/10 p-4 text-primary shadow-inner">
             <Brain size={32} />
           </div>
           <div>
@@ -124,8 +124,8 @@ export const FocusTimer = () => {
             <div className="text-xl font-bold">+50 XP</div>
           </div>
         </div>
-        <div className="bg-white p-8 border border-gray-200 flex items-center gap-6">
-          <div className="bg-secondary/5 p-4 text-secondary">
+        <div className="bg-bg-alt/60 p-8 border border-white/5 flex items-center gap-6 backdrop-blur-sm">
+          <div className="bg-secondary/10 p-4 text-secondary shadow-inner">
             <Coffee size={32} />
           </div>
           <div>

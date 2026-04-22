@@ -25,15 +25,15 @@ export default function RegisterPage() {
       {/* Back button */}
       <div className="absolute top-8 left-8 z-50">
         <Link href="/">
-          <Button variant="tertiary" className="group text-text-secondary hover:text-secondary">
-            <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
-            Retour à l'accueil
-          </Button>
+          <button className="group flex items-center gap-3 px-5 py-2.5 glass glow-border text-white/70 hover:text-white hover:bg-white/10 transition-all rounded-full text-xs font-black uppercase tracking-widest shadow-xl">
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span>Accueil</span>
+          </button>
         </Link>
       </div>
 
       {/* Background grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[size:40px_40px] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)]" />
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[size:40px_40px] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]" />
       
       {/* Decorative blurs */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-secondary/10 blur-[120px] -z-10" />
@@ -59,7 +59,7 @@ export default function RegisterPage() {
           </h1>
         </div>
 
-        <Card className="p-10 border-t-8 border-t-secondary shadow-2xl">
+        <Card className="p-10 border-t-8 border-t-secondary bg-bg-alt/60 backdrop-blur-xl shadow-2xl border-x-white/5 border-b-white/5">
           <form onSubmit={handleRegister} className="space-y-6">
             <div className="space-y-5">
               <div>
@@ -71,8 +71,9 @@ export default function RegisterPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="w-full bg-bg-main border border-gray-200 p-4 pl-12 rounded-none focus:border-secondary outline-none font-bold transition-all"
+                    className="w-full bg-bg-main border border-white/10 p-4 pl-12 rounded-xl focus:border-secondary outline-none font-bold text-text-main transition-all"
                     placeholder="Jean Dupont"
+                    autoComplete="name"
                   />
                 </div>
               </div>
@@ -85,8 +86,9 @@ export default function RegisterPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full bg-bg-main border border-gray-200 p-4 pl-12 rounded-none focus:border-secondary outline-none font-bold transition-all"
+                    className="w-full bg-bg-main border border-white/10 p-4 pl-12 rounded-xl focus:border-secondary outline-none font-bold text-text-main transition-all"
                     placeholder="etudiant@polytech.cm"
+                    autoComplete="username"
                   />
                 </div>
               </div>
@@ -99,8 +101,9 @@ export default function RegisterPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full bg-bg-main border border-gray-200 p-4 pl-12 rounded-none focus:border-secondary outline-none font-bold transition-all"
+                    className="w-full bg-bg-main border border-white/10 p-4 pl-12 rounded-xl focus:border-secondary outline-none font-bold text-text-main transition-all"
                     placeholder="••••••••"
+                    autoComplete="new-password"
                   />
                 </div>
               </div>

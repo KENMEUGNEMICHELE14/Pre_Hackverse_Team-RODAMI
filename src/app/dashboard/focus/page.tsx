@@ -17,8 +17,8 @@ export default function FocusPage() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="bg-white border border-gray-200">
-            <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+          <div className="bg-bg-alt/40 border border-white/5 backdrop-blur-md">
+            <div className="p-6 border-b border-white/5 flex items-center justify-between">
               <h3 className="text-sm font-black uppercase tracking-widest text-text-main flex items-center gap-2">
                 <History size={16} />
                 Historique
@@ -28,7 +28,7 @@ export default function FocusPage() {
             
             <div className="p-6 space-y-4 max-h-[600px] overflow-y-auto">
               {sessions.length === 0 ? (
-                <div className="text-center py-10">
+                <div className="text-center py-10 bg-white/5 border border-dashed border-white/10">
                   <p className="text-xs text-text-secondary italic">Aucune session pour le moment</p>
                 </div>
               ) : (

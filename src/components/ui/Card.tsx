@@ -9,8 +9,8 @@ export const Card = ({ className, hoverEffect = true, children, ...props }: Card
   return (
     <div
       className={cn(
-        "bg-white rounded-none shadow-md p-6 border border-gray-100 transition-all duration-300",
-        hoverEffect && "hover:shadow-lg hover:-translate-y-1",
+        "bg-bg-alt/40 backdrop-blur-md rounded-none p-6 border border-white/5 transition-all duration-300",
+        hoverEffect && "hover:border-primary/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] hover:-translate-y-0.5",
         className
       )}
       {...props}

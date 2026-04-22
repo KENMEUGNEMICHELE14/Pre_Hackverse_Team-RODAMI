@@ -26,7 +26,7 @@ export const DashboardPreview = () => {
             <div className="flex h-[600px]">
               {/* Sidebar Mock */}
               <div className="w-20 border-r border-white/5 bg-white/5 hidden md:flex flex-col items-center py-10 gap-12">
-                <div className="bg-primary p-2">
+                <div className="bg-primary p-2 rounded-lg">
                   <Rocket className="text-white w-5 h-5 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                 </div>
                 <Timer className="text-primary w-6 h-6" />
@@ -51,9 +51,9 @@ export const DashboardPreview = () => {
                   <div className="space-y-4">
                     <div className="text-[10px] font-black uppercase tracking-widest text-text-secondary/50 mb-6 font-mono">Tâches Critiques</div>
                     {[1, 2, 3].map((i) => (
-                      <div key={i} className="flex items-center gap-6 p-5 border border-white/5 bg-white/5 relative overflow-hidden group/item hover:bg-white/10 transition-colors">
+                      <div key={i} className="flex items-center gap-6 p-5 border border-white/5 bg-white/5 relative overflow-hidden group/item hover:bg-white/10 transition-colors rounded-xl">
                         <div className={`w-1 h-full absolute left-0 top-0 ${i === 1 ? 'bg-primary' : 'bg-white/10'}`} />
-                        <div className="w-5 h-5 border border-white/20" />
+                        <div className="w-5 h-5 border border-white/20 rounded-md" />
                         <div>
                           <p className="font-bold uppercase tracking-tight text-xs">Analyse Structurelle S2</p>
                           <p className="text-[9px] font-bold text-text-secondary/60">SCORE : {20 - i * 3}</p>
@@ -63,18 +63,18 @@ export const DashboardPreview = () => {
                   </div>
                   <div className="glass glow-border p-10 flex flex-col items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-primary/5 opacity-20" />
-                    <div className="w-32 h-32 rounded-none border-4 border-white/5 flex items-center justify-center mb-10 relative">
+                    <div className="w-32 h-32 rounded-full border-4 border-white/5 flex items-center justify-center mb-10 relative">
                        <div className="text-2xl font-black text-white/90">25:00</div>
                        <div className="absolute inset-0 border-4 border-primary border-r-transparent border-t-transparent animate-[spin_4s_linear_infinite]" />
                     </div>
-                    <button className="bg-primary text-white font-black text-xs uppercase tracking-widest px-8 py-4 shadow-xl hover:scale-105 transition-transform">Démarrer</button>
+                    <button className="bg-primary text-white font-black text-xs uppercase tracking-widest px-8 py-4 shadow-xl hover:scale-105 transition-transform rounded-xl">Démarrer</button>
                   </div>
                 </div>
               </div>
             </div>
           </Card>
 
-          <div className="absolute -top-6 -right-6 bg-secondary text-white px-6 py-2 font-black text-sm rotate-6 shadow-2xl z-20">
+          <div className="absolute -top-6 -right-6 bg-secondary text-white px-6 py-2 font-black text-sm rotate-6 shadow-2xl z-20 rounded-md">
             OPTIMISÉ ENSPY
           </div>
         </div>

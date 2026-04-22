@@ -20,7 +20,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "px-8 py-4 text-lg",
     };
 
-    const baseStyles = "rounded-none font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
+    const baseStyles = "rounded-xl font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
 
     return (
       <button

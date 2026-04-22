@@ -42,7 +42,7 @@ export const TaskList = () => {
     <div className="space-y-8">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-black uppercase tracking-tighter text-text-main flex items-center gap-3">
-          <CheckSquare className="w-8 h-8 text-primary" />
+          <CheckCircle className="w-8 h-8 text-primary" />
           Mes Tâches
         </h2>
         <Button onClick={() => setIsAdding(true)} className="flex items-center gap-2">
@@ -61,7 +61,7 @@ export const TaskList = () => {
                   type="text" 
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
-                  className="w-full bg-white border border-gray-200 p-4 rounded-none focus:border-primary outline-none text-lg font-bold"
+                  className="w-full bg-bg-main border border-white/10 p-4 rounded-xl focus:border-primary outline-none text-lg font-bold text-text-main transition-all"
                   placeholder="Qu'allez-vous accomplir ?"
                   autoFocus
                 />
@@ -71,11 +71,11 @@ export const TaskList = () => {
                 <select 
                   value={newTaskPriority}
                   onChange={(e) => setNewTaskPriority(e.target.value as Priority)}
-                  className="w-full bg-white border border-gray-200 p-4 rounded-none focus:border-primary outline-none"
+                  className="w-full bg-bg-main border border-white/10 p-4 rounded-xl focus:border-primary outline-none text-text-main"
                 >
-                  <option value="LOW">Basse</option>
-                  <option value="MEDIUM">Moyenne</option>
-                  <option value="HIGH">Haute</option>
+                  <option value="LOW" className="bg-bg-main">Basse</option>
+                  <option value="MEDIUM" className="bg-bg-main">Moyenne</option>
+                  <option value="HIGH" className="bg-bg-main">Haute</option>
                 </select>
               </div>
               <div>
@@ -84,7 +84,7 @@ export const TaskList = () => {
                   type="date" 
                   value={newTaskDeadline}
                   onChange={(e) => setNewTaskDeadline(e.target.value)}
-                  className="w-full bg-white border border-gray-200 p-4 rounded-none focus:border-primary outline-none"
+                  className="w-full bg-bg-main border border-white/10 p-4 rounded-xl focus:border-primary outline-none text-text-main"
                 />
               </div>
             </div>
@@ -98,15 +98,15 @@ export const TaskList = () => {
 
       <div className="space-y-4">
         {sortedTasks.length === 0 ? (
-          <div className="text-center py-20 bg-white border border-dashed border-gray-300">
+          <div className="text-center py-20 bg-bg-alt/20 border border-dashed border-white/10">
             <p className="text-text-secondary">Aucune tâche enregistrée. Commencez par en créer une !</p>
           </div>
         ) : (
           sortedTasks.map((task, idx) => (
             <Card key={task.id} className={cn(
-              "p-6 group transition-all duration-300 border-l-8",
-              idx === 0 && task.status !== 'DONE' ? "border-l-primary shadow-xl ring-2 ring-primary/5" : "border-l-gray-200",
-              task.status === 'DONE' && "opacity-50 grayscale shadow-none"
+              "p-6 group transition-all duration-300 border-l-8 bg-bg-alt/20",
+              idx === 0 && task.status !== 'DONE' ? "border-l-primary shadow-xl ring-2 ring-primary/5" : "border-l-white/5",
+              task.status === 'DONE' && "opacity-40 grayscale shadow-none"
             )}>
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div className="flex-1">
