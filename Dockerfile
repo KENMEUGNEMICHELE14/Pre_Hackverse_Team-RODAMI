@@ -14,5 +14,5 @@ COPY --from=build /app/target/*.jar app.jar
 ENV PORT=8080
 EXPOSE 8080
 
-# Lancement
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Lancement avec port dynamique pour Render
+ENTRYPOINT ["java", "-Dserver.port=${PORT:8080}", "-jar", "app.jar"]
