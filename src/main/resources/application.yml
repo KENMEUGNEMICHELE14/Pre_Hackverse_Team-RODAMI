@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/antiproc_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: UTC
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:my-very-long-256-bit-secret-key-for-hackverse-antiproc-app-2026}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}  # 24h
+  bcrypt:
+    rounds: ${BCRYPT_ROUNDS:12}
+  security:
+    max-login-attempts: 5
+    lockout-duration-minutes: 15
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:3000}
+
+logging:
+  level:
+    com.hackverse.antiproc: INFO
+    org.springframework.security: WARN
