@@ -114,6 +114,30 @@ Toutes les routes (sauf auth) nécessitent le header : `Authorization: Bearer <t
 
 ---
 
-## Variables d'Environnement
+## 🚀 Déploiement sur Render
 
-Voir [`.env.example`](.env.example).
+Le projet inclut un `Dockerfile` pour un déploiement facile.
+
+### Étapes recommandées :
+
+1. **Base de données** : Créez une instance **Render PostgreSQL**. Copiez l'URL de connexion interne.
+2. **Web Service** : Créez un nouveau "Web Service" sur Render à partir de votre dépôt.
+3. **Configuration** :
+   - **Runtime** : `Docker`
+   - **Plan** : `Free` ou plus
+4. **Variables d'environnement** :
+   - `DATABASE_URL` : L'URL de votre DB Render (ex: `postgres://user:pass@host/db?sslmode=require`)
+   - `DB_USERNAME` : Votre utilisateur DB
+   - `DB_PASSWORD` : Votre mot de passe DB
+   - `JWT_SECRET` : Une clé secrète longue et complexe
+   - `ALLOWED_ORIGINS` : L'URL de votre frontend (ex: `https://votre-app.vercel.app`)
+
+---
+
+## 🏗️ Docker local (Optionnel)
+
+Pour tester l'image localement :
+```bash
+docker build -t antiproc-backend .
+docker run -p 8080:8080 --env-file .env antiproc-backend
+```
